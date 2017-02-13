@@ -53,7 +53,7 @@ $today = date("Y-m-d H:i:s");
                         <option>FeMale</option>
             </select>
                 </TD>
-    </TR><br><br>
+    </TR>
     <TR>
         <TD>Email id:</TD>
         <TD><input type="email" id="gen" name="email_id" class="form-control" id="ex1" placeholder="name@gmail.com"></TD>
@@ -117,8 +117,16 @@ $today = date("Y-m-d H:i:s");
             
         </td>
     </tr>
+    <tr>
+        <td>Username:</td>
+        <td><input type='text' name='username' class='form-control' id='ex1' placeholder='username'></td>
+    </tr>
+     <tr>
+        <td>Password:</td>
+        <td><input type='password' name='password' class='form-control' id='ex1' placeholder='password'></td>
+    </tr>
     <TR><TD></TD>
-        <TD><input type="submit" name="register" value="Register"></TD></TR>
+        <TD><input type="submit" name="register" value="register"></TD></TR>
     
 </form>
     </TABLE>

@@ -21,10 +21,12 @@ $gender= $_POST['gender'];
 $email_id=  strtolower($_POST['email_id']);
 $phone_no=$_POST['phone_no'];
 $dob=$_POST['yb']."-".$_POST['mb']."-".$_POST['db'];
-$today = date("Y-m-d H:i:s");//20152112
+date_default_timezone_set("Asia/Kolkata");//20152112
+$today =date('Y-m-d H:i:s');
+$username=$_POST['username'];
+$password=$_POST['password'];
 
-
-if(!empty($hallticket_no)&&!empty($gender)&&!empty($email_id)&&!empty($phone_no)&&!empty($dob))
+if(!empty($hallticket_no)&&!empty($gender)&&!empty($email_id)&&!empty($phone_no)&&!empty($dob)&&!empty($username)&&!empty($password))
     {
     
     $Mvalidation="Select count(phone_no) from users where phone_no=".$phone_no;
@@ -36,8 +38,8 @@ if($Mvalidationvalue==0)
     {
     if(isset($_POST['register'])){
     $query="INSERT INTO `whatsapp`.`users` "
-            . "(`id`, `hallticket_no`, `gender`, `email_id`, `phone_no`,`dob`,`ipaddress`,`registered_date`)"
-            . " VALUES (NULL, '$hallticket_no', '$gender','$email_id','$phone_no','$dob','$ip','$today')";
+            . "(`id`, `hallticket_no`, `gender`, `email_id`, `phone_no`,`dob`,`ipaddress`,`registered_date`,`username`,`password`)"
+            . " VALUES (NULL, '$hallticket_no', '$gender','$email_id','$phone_no','$dob','$ip','$today','$username','$password')";
     $query_run=  mysql_query($query);
   echo '<font color="blue" size="5">'. 'Thank you' . 
            'Your registion is done successfully.</font>'.'<br>';                                

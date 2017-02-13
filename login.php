@@ -9,19 +9,32 @@
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 </head>
 <body>
-<form method="POST" name="user" onSubmit="logvalidateform()" action="report.php">
-        Username:<input  type="text" name="users" ><br>
-        Password:<input  type="password" name="pwd"><br>
-        <input type="submit" value="Login" name="Login" >
-    </form>
+<?php
+require 'dbconnect.php';
+
+if(!isset($_SESSION['uid']))
+{
+   echo "<form action='loginsuccess.php' method='post' width='40%'>
+    <table width=50%>
+    <tr>
+        <td>Username:</td>
+        <td><input type='text' name='username' class='form-control' id='ex1' placeholder='username'></td>
+    </tr>
+     <tr>
+        <td>Password:</td>
+        <td><input type='password' name='password' class='form-control' id='ex1' placeholder='password'></td>
+    </tr>
+    <TR><TD></TD>
+        <TD><input type='submit' name='login' value='Login'></TD></TR>
+    </table>
+        </form>";
     
-    <script>
-        function logvalidationform(){
-            var a = users.user1.value;
-            var b= users.pwd.value;
-  if(a==Admin && b==admin)  { }   
-  }
-   
-    </script>
+}
+
+
+
+
+
+?>
 </body>
 </html>
